@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GestionContactos.Api\GestionContactos.Api.csproj" />
+  </ItemGroup>
+
 </Project>
