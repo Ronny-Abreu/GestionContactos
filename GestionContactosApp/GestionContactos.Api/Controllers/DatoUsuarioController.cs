@@ -71,7 +71,7 @@ namespace GestionContactos.Api.Controllers
 
             var datos = new DatoUsuario
             {
-                Id = datoUsuarioDto.Id,
+                Id = 0,
                 Nombre = datoUsuarioDto.Nombre,
                 Apellido = datoUsuarioDto.Apellido,
                 Correo = datoUsuarioDto.Correo,
