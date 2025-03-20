@@ -1,0 +1,42 @@
+﻿body {
+    background-image: url('/img/degraddo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+p {
+    font-size: 1.8rem;
+    margin-top: 10px;
+    transition: transform 4s ease-in-out, opacity 3s ease-in-out;
+}
+
+/* Animación */
+.content h1, .content p {
+    transform: translateY(-20px);
+    opacity: 0;
+}
+
+.content.show h1, .content.show p {
+    transform: translateY(0);
+    opacity: 1;
+}

@@ -1,0 +1,32 @@
+﻿@model GestionContactos.Frontend.Models.DatoUsuario
+
+@{
+    ViewData["Title"] = "Detalles del usuario";
+}
+
+<style>
+    .white-text {
+        color: white;
+    }
+</style>
+
+<h3>Detalles del Usuario</h3>
+
+<dl class="dl-horizontal">
+    <dt>Nombre</dt>
+    <dd class="white-text">@Model.Nombre</dd>
+
+    <dt>Apellido</dt>
+    <dd class="white-text">@Model.Apellido</dd>
+
+    <dt>Correo</dt>
+    <dd class="white-text">@Model.Correo</dd>
+
+    <dt>Teléfono</dt>
+    <dd class="white-text">@Model.Telefono</dd>
+</dl>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

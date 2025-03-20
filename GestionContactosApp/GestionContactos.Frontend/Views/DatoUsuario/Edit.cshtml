@@ -1,0 +1,62 @@
+﻿@model GestionContactos.Frontend.Models.DatoUsuario
+
+@{
+    ViewData["Title"] = "Editar Datos Usuario";
+}
+
+<h2 class="text-center text-white mt-4">Editar Datos Usuario</h2>
+
+<form class="form" asp-action="EditPost" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <input asp-for="Nombre" class="input" placeholder="Nombre del usuario" type="text" required />
+
+    <input asp-for="Apellido" class="input" placeholder="Apellido del usuario" type="text" required />
+
+    <input asp-for="Correo" class="input" placeholder="Correo del usuario" type="text" required />
+
+    <input asp-for="Telefono" class="input" placeholder="Teléfono del usuario" type="text" required />
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+<!-- Modal-->
+<div class="modal" tabindex="-1" role="dialog" id="successModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Datos Actualizados</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Los datos del usuario se actualizaron correctamente.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnOk">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="~/css/estilos.css" asp-append-version="true" />
+
+@section Scripts {
+    <script type="text/javascript">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <text>
+                    $(document).ready(function () {
+                        $('#successModal').modal('show');
+                    });
+            </text>
+        }
+
+        $('#btnOk').click(function () {
+            var datosId = '@TempData["datosId"]';
+            window.location.href = '/DatoUsuario' + datosId;
+        });
+    </script>
+}
