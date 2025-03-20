@@ -10,13 +10,22 @@ namespace GestionContactos.Domain.Data
         {
          
             var optionsBuilder = new DbContextOptionsBuilder<GestionContactosContext>();
-            
+
+            // Obtengo el directorio base del proyecto API
+            string basePath = Directory.GetCurrentDirectory();
+            Console.WriteLine($"Directorio actual: {basePath}");
+
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../GestionContactosApp.Api")) // Ruta al proyecto API
-                .AddJsonFile("appsettings.json")
+                .SetBasePath(basePath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
-            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
+            //Conexión a la base de datos
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
+            Console.WriteLine($"Cadena de conexión: {connectionString}");
+
+            optionsBuilder.UseSqlServer(connectionString);
+
 
             return new GestionContactosContext(optionsBuilder.Options);
         }
