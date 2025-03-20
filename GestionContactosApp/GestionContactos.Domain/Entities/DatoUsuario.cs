@@ -1,6 +1,6 @@
 ﻿namespace GestionContactos.Domain.Entities
 {
-    public class DatosUsuarios
+    public class DatoUsuario
     {
         public int Id { get; set; }
         public string? Nombre { get; set; }
