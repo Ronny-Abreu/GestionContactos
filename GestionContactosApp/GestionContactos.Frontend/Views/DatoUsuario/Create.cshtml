@@ -1,0 +1,28 @@
+﻿@model GestionContactos.Frontend.Models.DatoUsuario
+
+<h2 class="text-center text-white mt-4">Crear usuario</h2>
+
+<form class="form" asp-action="Create" method="post">
+
+    <input asp-for="Nombre" class="input" placeholder="Nombre del usuario" type="text" required />
+    <span asp-validation-for="Nombre" class="text-danger"></span>
+
+    <input asp-for="Apellido" class="input" placeholder="Apellido del usuario" type="text" required />
+    <span asp-validation-for="Apellido" class="text-danger"></span>
+
+    <input asp-for="Correo" class="input" placeholder="Correo del usuario" type="email" required />
+    <span asp-validation-for="Correo" class="text-danger"></span>
+
+    <input asp-for="Telefono" class="input" placeholder="Teléfono del usuario" type="tel" required />
+    <span asp-validation-for="Telefono" class="text-danger"></span>
+
+
+    <button type="submit" class="btn btn-primary">Crear Usuario</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+<link rel="stylesheet" href="~/css/estilos.css" asp-append-version="true" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
