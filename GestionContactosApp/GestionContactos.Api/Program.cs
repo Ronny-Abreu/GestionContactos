@@ -1,5 +1,5 @@
 using GestionContactos.Application.Services;
-using GestionContactos.Domain.Data;
+using GestionContactos.Infrastructure.Context;
 using GestionContactos.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
