@@ -1,4 +1,4 @@
-﻿using GestionContactos.Domain.Data;
+﻿using GestionContactos.Infrastructure.Context;
 using GestionContactos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
