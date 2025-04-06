@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GestionContactos.Domain.Entities;
 
-namespace GestionContactos.Domain.Data
+namespace GestionContactos.Infrastructure.Context
 {
     public class GestionContactosContext : DbContext
     {

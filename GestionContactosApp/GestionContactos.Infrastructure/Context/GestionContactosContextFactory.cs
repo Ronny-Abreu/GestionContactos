@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace GestionContactos.Domain.Data
+namespace GestionContactos.Infrastructure.Context
 {
     public class GestionContactosContextFactory : IDesignTimeDbContextFactory<GestionContactosContext>
     {
         public GestionContactosContext CreateDbContext(string[] args)
         {
-         
+
             var optionsBuilder = new DbContextOptionsBuilder<GestionContactosContext>();
 
             // Obtengo el directorio base del proyecto API
